@@ -2,10 +2,25 @@
 GET http://localhost:3333/rooms
 
 ### Create Room
+# @name createRoom
 POST http://localhost:3333/rooms
 Content-Type: application/json
 
 {
   "name": "Room 1",
   "description": "Description 1"
+}
+###
+ @roomId = ed47b8d9-31ea-4107-9741-a17ba8ed29b8
+###
+
+### Get Room Questions
+GET http://localhost:3333/rooms/ed47b8d9-31ea-4107-9741-a17ba8ed29b8/questions
+
+### Create Question
+POST http://localhost:3333/rooms/ed47b8d9-31ea-4107-9741-a17ba8ed29b8/questions
+Content-Type: application/json
+
+{
+  "question": "Question sbdjbsjbniwelewwil chocolate"
 }
