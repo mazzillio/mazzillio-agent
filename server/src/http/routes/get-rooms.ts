@@ -14,6 +14,7 @@ export const getRooms: FastifyPluginCallbackZod = (fastify) => {
       .from(schema.rooms)
       .leftJoin(schema.questions, eq(schema.rooms.id, schema.questions.roomId))
       .groupBy(schema.rooms.id)
-      .orderBy(schema.rooms.createdAt);
+      .orderBy(schema.rooms.createdAt)
+      .limit(10);
   });
 };
