@@ -18,9 +18,9 @@ Content-Type: application/json
 GET http://localhost:3333/rooms/ed47b8d9-31ea-4107-9741-a17ba8ed29b8/questions
 
 ### Create Question
-POST http://localhost:3333/rooms/ed47b8d9-31ea-4107-9741-a17ba8ed29b8/questions
+POST http://localhost:3333/rooms/a6732832-9805-4da4-f281-fa7773aff23b/questions
 Content-Type: application/json
 
 {
-  "question": "Question sbdjbsjbniwelewwil chocolate"
+  "question": "Question muito chocolate"
 }
