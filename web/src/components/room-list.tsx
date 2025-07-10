@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useRoom } from "../http/use-room";
 import { formatRelativeDate } from "../lib/format-relative-date";
 import { Badge } from "./ui/badge";
 import {
@@ -12,21 +12,8 @@ import {
 } from "./ui/card";
 
 export function RoomList() {
-  type GetRoomsResponse = Array<{
-    id: string;
-    name: string;
-    questionsCount: number;
-    createdAt: string;
-  }>;
+  const { data: rooms, isLoading } = useRoom();
 
-  const { data: rooms, isLoading } = useQuery({
-    queryKey: ["get-rooms"],
-    queryFn: async () => {
-      const response = await fetch("http://localhost:3333/rooms");
-      const data: GetRoomsResponse = await response.json();
-      return data;
-    },
-  });
   return (
     <Card>
       <CardHeader>
